@@ -68,7 +68,7 @@ if(require.main == module) {
         .option('-f, --file <html_file>', 'Path to index.html', clone(assertFileExists), HTMLFILE_DEFAULT)
         .option('-u, --url <html_file>', 'url to index.html')
         .parse(process.argv);
-    rest.get(apiurl).on('complete', response2console);
+
     var checkJson = checkHtmlFile(program.file, program.checks);
     var outJson = JSON.stringify(checkJson, null, 4);
     console.log(outJson);
@@ -76,4 +76,4 @@ if(require.main == module) {
     exports.checkHtmlFile = checkHtmlFile;
 }
 
-if(program.url){rest.get(program.url).on('complete', response2console); }  else { ..........   }
+//if(program.url){rest.get(program.url).on('complete', response2console); }  else { ..........   }
